@@ -39,12 +39,13 @@ function calculate(btn) {
         //sub-test for ERROR and replace with 0 if operator is pressed
         if (calcDisplay.textContent == "ERROR") {
             calculation.textContent = 0;
+            startOver = false;
         }
         else {
             calculation.textContent = String(calcDisplay.textContent);
             startOver = false;
         };
-    }
+    };
     //replace the ÷ symbol with the correct mathematical operator
     if (btn.textContent == "÷") {
         calculation.textContent += "/";
@@ -71,7 +72,7 @@ function equals() {
         if (e instanceof SyntaxError) {
             calcDisplay.textContent = "ERROR";
         }
-    }
+    };
     //clear calculation div:
     calculation.textContent = "";
     startOver = true;
