@@ -13,9 +13,9 @@ let startOver = false;
 //event listener for calculator buttons
 for (let i = 0; i < calcButton.length; i++) {
     calcButton[i].addEventListener('click', () => {
-        calculate(calcButton[i]);
+        calculate(calcButton[i].textContent);
     });
-};
+};  
 
 //equals button event listener
 equalsButton.addEventListener('click', () => {
@@ -35,7 +35,7 @@ backButton.addEventListener('click', () => {
 //function to write out calculations
 function calculate(btn) {
     //test to see whether there is an answer in calcDisplay, and then append calculator operator to this answer 
-    if (startOver && (btn.textContent == "÷" || btn.textContent == "x" || btn.textContent == "-" || btn.textContent == "+")) {
+    if (startOver && (btn == "÷" || btn == "x" || btn == "-" || btn == "+")) {
         //sub-test for ERROR and replace with 0 if operator is pressed
         if (calcDisplay.textContent == "ERROR") {
             calculation.textContent = 0;
@@ -47,15 +47,15 @@ function calculate(btn) {
         };
     };
     //replace the ÷ symbol with the correct mathematical operator
-    if (btn.textContent == "÷") {
+    if (btn == "÷") {
         calculation.textContent += "/";
     }
     //replace the x symbol with the correct mathematical operator
-    else if (btn.textContent == "x") {
+    else if (btn == "x") {
         calculation.textContent += "*";
     }
     //append calculation catchall
-    else calculation.textContent += btn.textContent;
+    else calculation.textContent += btn;
     startOver = false;
 };
 
@@ -93,6 +93,6 @@ function backSpace() {
     return;
 }
 
-window.addEventListener('keydown', (e) => {
-    console.log(e.key);
-})
+document.addEventListener('keydown', (e) => {
+    calculate(e.key);
+});
