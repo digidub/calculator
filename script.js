@@ -56,6 +56,7 @@ function calculate(btn) {
     }
     //append calculation catchall
     else calculation.textContent += btn.textContent;
+    startOver = false;
 };
 
 //function to return sum
