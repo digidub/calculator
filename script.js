@@ -58,9 +58,16 @@ function equals() {
         calcDisplay.textContent = 0;
         return;
     };
-    //display answer on main display:
-    console.log(eval(calculation.textContent));
-    calcDisplay.textContent = parseFloat(eval(calculation.textContent)) || "ERROR";
+    //attempt calculation, otherwise display error message if syntax error
+    try {
+    calcDisplay.textContent = parseFloat(eval(calculation.textContent));
+    } catch (e) {
+        if (e instanceof SyntaxError) {
+            calcDisplay.textContent = "ERROR";
+        }
+    }
+    
+    // || "ERROR";
     //clear calculation div:
     calculation.textContent = "";
     startOver = true; 
