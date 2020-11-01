@@ -38,11 +38,11 @@ function calculate(btn) {
     if (startOver && (btn.textContent == "÷" || btn.textContent == "*" || btn.textContent == "-" || btn.textContent == "+")) {
         //sub-test for ERROR and replace with 0 if operator is pressed
         if (calcDisplay.textContent == "ERROR") {
-            calculation.textContent = 0;            
+            calculation.textContent = 0;
         }
-        else { 
-        calculation.textContent = String(calcDisplay.textContent);
-        startOver = false;
+        else {
+            calculation.textContent = String(calcDisplay.textContent);
+            startOver = false;
         };
     }
     //replace the ÷ symbol with the correct mathematical operator
@@ -54,7 +54,7 @@ function calculate(btn) {
         calculation.textContent += "*";
     }
     //append calculation catchall
-    else calculation.textContent += btn.textContent;    
+    else calculation.textContent += btn.textContent;
 };
 
 //function to return sum
@@ -66,17 +66,15 @@ function equals() {
     };
     //attempt calculation, otherwise display error message if syntax error
     try {
-    calcDisplay.textContent = parseFloat(eval(calculation.textContent));
+        calcDisplay.textContent = parseFloat(eval(calculation.textContent));
     } catch (e) {
         if (e instanceof SyntaxError) {
             calcDisplay.textContent = "ERROR";
         }
     }
-    
-    // || "ERROR";
     //clear calculation div:
     calculation.textContent = "";
-    startOver = true; 
+    startOver = true;
     return;
 };
 
