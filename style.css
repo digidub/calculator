@@ -1,7 +1,12 @@
+:root {
+    background: #006064;
+}
+
 .wrapper {
     margin: 20px 400px 40px 400px;
     font-size: 40px;
-
+    
+    
 }
 
 .calculator-body {
@@ -9,14 +14,14 @@
     height: 500px;
     grid-template-columns: repeat(4, 25%);
     grid-template-rows: repeat(5, 20%);
-    grid-gap: 10px;
+    grid-gap: 0px;
 }
 
 .calculator {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #bbb;
+    border: 1px solid #E0F7FA;
 }
 
 .calculator-main-display {
@@ -25,7 +30,8 @@
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-end;
-    padding: 10px;    
+    padding: 10px;
+    background: #E0F7FA; 
     }
 
 
@@ -36,3 +42,20 @@
     bottom: 10px;
     z-index: 99;
 }
+
+.calc-btn {
+    background: #0097A7;
+}
+
+.calculator-clear {    
+    background: #0097A7;
+}
+
+.calculator-backspace {    
+    background: #0097A7;
+}
+
+.calculator-numpad {
+    background-color: #80DEEA;
+}
+
