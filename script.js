@@ -53,12 +53,8 @@ function calculate(btn) {
 
 //function to return sum
 function equals() {
-    //check to see whether there is a calculation to evaluate:
-    if (calculation.textContent === "") {
-    calcDisplay.textContent = "0";
-    };
     //display answer on main display:
-    calcDisplay.textContent = parseFloat(eval(calculation.textContent));
+    calcDisplay.textContent = parseFloat(eval(calculation.textContent)) || "ERROR";
     //clear calculation div:
     calculation.textContent = "";
     startOver = true; 
