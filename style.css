@@ -1,0 +1,38 @@
+.wrapper {
+    margin: 20px 400px 40px 400px;
+    font-size: 40px;
+
+}
+
+.calculator-body {
+    display: grid;
+    height: 500px;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(5, 20%);
+    grid-gap: 10px;
+}
+
+.calculator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #bbb;
+}
+
+.calculator-main-display {
+    display: flex;
+    grid-column: 1 / span 4;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 10px;    
+    }
+
+
+.calculation {
+    font-size: 15px;
+    border: 0px;
+    position: relative;
+    bottom: 10px;
+    z-index: 99;
+}
