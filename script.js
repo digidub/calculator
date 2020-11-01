@@ -59,11 +59,12 @@ function equals() {
         return;
     };
     //display answer on main display:
-    calcDisplay.textContent = parseFloat(eval(calculation.textContent)); || "ERROR";
+    console.log(eval(calculation.textContent));
+    calcDisplay.textContent = parseFloat(eval(calculation.textContent)) || "ERROR";
     //clear calculation div:
     calculation.textContent = "";
     startOver = true; 
-    //calculation.textContent = String(calcDisplay.textContent);    
+    return;
 };
 
 //function that clears all
@@ -76,4 +77,5 @@ function clearAll() {
 //function that acts like a backspace key
 function backSpace() {
     calculation.textContent = calculation.textContent.slice(0, -1);
+    return;
 }
