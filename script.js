@@ -94,8 +94,18 @@ function backSpace() {
 }
 
 document.addEventListener('keydown', (e) => {
-    if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")") {
+    console.log(e);
+    if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")" || e.key == ".") {
         calculate(e.key);
+        return;
+    }
+    else if (e.keyCode == 8) {
+        backSpace();
+        return
+    }
+    else if (e.keyCode == 46) {
+        clearAll();
+        return;
     }
     else return;
 });
