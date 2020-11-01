@@ -35,7 +35,7 @@ backButton.addEventListener('click', () => {
 //function to write out calculations
 function calculate(btn) {
     //test to see whether there is an answer in calcDisplay, and then append calculator operator to this answer 
-    if (startOver && (btn.textContent == "÷" || btn.textContent == "*" || btn.textContent == "-" || btn.textContent == "+")) {
+    if (startOver && (btn.textContent == "÷" || btn.textContent == "x" || btn.textContent == "-" || btn.textContent == "+")) {
         //sub-test for ERROR and replace with 0 if operator is pressed
         if (calcDisplay.textContent == "ERROR") {
             calculation.textContent = 0;
@@ -92,3 +92,7 @@ function backSpace() {
     calculation.textContent = calculation.textContent.slice(0, -1);
     return;
 }
+
+window.addEventListener('keydown', (e) => {
+    console.log(e.key);
+})
