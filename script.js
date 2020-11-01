@@ -94,7 +94,7 @@ function backSpace() {
 }
 
 document.addEventListener('keydown', (e) => {
-    if (e.key >= 0) {
+    if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")") {
         calculate(e.key);
     }
     else return;
