@@ -15,7 +15,7 @@ for (let i = 0; i < calcButton.length; i++) {
     calcButton[i].addEventListener('click', () => {
         calculate(calcButton[i].textContent);
     });
-};  
+};
 
 //equals button event listener
 equalsButton.addEventListener('click', () => {
@@ -94,5 +94,8 @@ function backSpace() {
 }
 
 document.addEventListener('keydown', (e) => {
-    calculate(e.key);
+    if (e.key >= 0) {
+        calculate(e.key);
+    }
+    else return;
 });
