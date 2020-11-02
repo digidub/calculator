@@ -76,10 +76,12 @@
 
 .calculator-clear {    
     background: #093A3E;
+    font-size: 22px;
 }
 
 .calculator-backspace {    
     background: #093A3E;
+    font-size: 22px;
 }
 
 .calculator-numpad {
