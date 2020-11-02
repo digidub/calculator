@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #E0F7FA;
+    border: 0px solid #E0F7FA;
 }
 
 .calculator-main-display {
@@ -36,7 +36,8 @@
     align-items: flex-end;
     padding: 10px;
     background: linear-gradient(#f4feff,#E0F7FA);
-    color: #00838F; 
+    color: #00838F;
+    text-shadow: 0px 1px #FFFFFF;
     }
 
 
