@@ -35,7 +35,7 @@ backButton.addEventListener('click', () => {
 //function to write out calculations
 function calculate(btn) {
     //test to see whether there is an answer in calcDisplay, and then append calculator operator to this answer 
-    if (startOver && (btn == "÷" || btn == "/" || btn == "x" || btn == "-" || btn == "+" || btn == "*")) {
+    if (startOver && (btn == "÷" || btn == "/" || btn == "x" || btn == "-" || btn == "+" || btn == "*" || btn == "×")) {
         //sub-test for ERROR and replace with 0 if operator is pressed
         if (calcDisplay.textContent == "ERROR") {
             calculation.textContent = 0;
@@ -50,8 +50,8 @@ function calculate(btn) {
     if (btn == "÷") {
         calculation.textContent += "/";
     }
-    //replace the x symbol with the correct mathematical operator
-    else if (btn == "x") {
+    //replace the × symbol with the correct mathematical operator
+    else if (btn == "x" || btn == "×") {
         calculation.textContent += "*";
     }
     //append calculation catchall
