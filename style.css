@@ -10,8 +10,14 @@
 .wrapper {
     margin-left: auto;
     margin-right: auto;
-    padding:  50px 140px 10px 140px;
+    padding:  10px 140px 10px 140px;
     max-width: 1170px;  
+}
+
+.heading {
+    margin: auto;
+    width: 250px;
+    color: #97C8EB;
 }
 
 .calculator-body {
@@ -61,6 +67,7 @@
 
 .calc-btn {
     background: #093A3E;
+    color: #97C8EB
 }
 
 .calculator-clear {    
