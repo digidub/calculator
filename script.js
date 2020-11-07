@@ -39,8 +39,8 @@ backButton.addEventListener('click', () => {
 function calculate(btn) {
     //test to see whether there is an answer in calcDisplay, and then append calculator operator to this answer to allow user to carry on calculation
     if (startOver && (btn == "÷" || btn == "/" || btn == "x" || btn == "-" || btn == "+" || btn == "*" || btn == "×")) {
-        //sub-test for ERROR and replace with 0 if operator is pressed
-        if (calcDisplay.textContent == "ERROR") {
+        //sub-test for ERROR or LOL NO and replace with 0 if operator is pressed
+        if (calcDisplay.textContent == "ERROR" || calcDisplay.textContent == "lol no") {
             calculation.textContent = 0;
             startOver = false;
         }
@@ -69,18 +69,22 @@ function equals() {
         calcDisplay.textContent = 0;
         return;
     };
-    //attempt calculation, otherwise display error message if syntax error
-    try {
-        calcDisplay.textContent = parseFloat(eval(calculation.textContent));
-    } catch (e) {
-        if (e instanceof SyntaxError) {
-            calcDisplay.textContent = "ERROR";
+    //test for number, attempt calculation, otherwise display error message if syntax error
+    if (!isNaN(parseFloat(eval(calculation.textContent)))) {
+        try {
+            calcDisplay.textContent = parseFloat(eval(calculation.textContent));
         }
-    };
-    //clear calculation div:
-    calculation.textContent = "";
-    startOver = true;
-    return;
+        catch (e) {
+            if (e instanceof SyntaxError) {
+                calcDisplay.textContent = "ERROR";
+            }
+        }
+    }
+    else calcDisplay.textContent = "lol no";
+//clear calculation div:
+calculation.textContent = "";
+startOver = true;
+return;
 };
 
 //function that clears all
@@ -164,3 +168,29 @@ window.addEventListener('keyup', buttonRelease);
 tips.style.display = "none";
 heading.addEventListener("click", displayTips);
 
+
+
+
+
+/*function equals() {
+    //test to see whether a calculation has been entered
+    if (calculation.textContent == "") {
+        calcDisplay.textContent = 0;
+        return;
+    };
+    //attempt calculation, otherwise display error message if syntax error
+    let calcSum;
+    try {
+        if (isNaN(eval(parseFloat(calculation.textContent)))) {
+            calcDisplay.textContent = eval(parseFloat(calculation.textContent));
+        }
+    } catch (e) {
+        if (e instanceof SyntaxError) {
+            calcDisplay.textContent = "ERROR";
+        }
+    };
+    //clear calculation div:
+    calculation.textContent = "";
+    startOver = true;
+    return;
+};*/
