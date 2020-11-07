@@ -139,7 +139,6 @@ function displayTips() {
 
 //keyboard event listener calculator input & higher level functions
 document.addEventListener('keydown', (e) => {
-    console.log(e);
     if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")" || e.key == "." || e.key == "*") {
         calculate(e.key);
         return;
