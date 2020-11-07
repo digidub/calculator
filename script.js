@@ -5,6 +5,9 @@ const calcDisplay = document.querySelector(".calculator-display");
 const equalsButton = document.querySelector(".calculator-equals");
 const clearButton = document.querySelector(".calculator-clear");
 const backButton = document.querySelector(".calculator-backspace");
+const heading = document.querySelector(".heading");
+const tips = document.querySelector(".tips");
+const hidetips = document.querySelectorAll(".hide-tips");
 
 
 //variable that influences how the calculation div is displayed.
@@ -34,7 +37,7 @@ backButton.addEventListener('click', () => {
 
 //function to write out calculations
 function calculate(btn) {
-    //test to see whether there is an answer in calcDisplay, and then append calculator operator to this answer 
+    //test to see whether there is an answer in calcDisplay, and then append calculator operator to this answer to allow user to carry on calculation
     if (startOver && (btn == "÷" || btn == "/" || btn == "x" || btn == "-" || btn == "+" || btn == "*" || btn == "×")) {
         //sub-test for ERROR and replace with 0 if operator is pressed
         if (calcDisplay.textContent == "ERROR") {
@@ -113,8 +116,26 @@ function buttonRelease(e) {
     else return;
 };
 
-//keyboard event listener & higher level functions
+//function to hide or display tooltips
+function displayTips() {
+    for (let i = 0; i < hidetips.length; i++) {
+        if (tips.style.display === "none") {
+            tips.style.display = "block";
+            return;
+        }
+        else if (tips.style.display === "block") {
+            tips.style.display = "none";
+            if (hidetips[i].style.display != "none") {
+                hidetips[i].style.display = "none";
+            };
+            return;
+        };
+    };
+};
+
+//keyboard event listener calculator input & higher level functions
 document.addEventListener('keydown', (e) => {
+    console.log(e);
     if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")" || e.key == "." || e.key == "*") {
         calculate(e.key);
         return;
@@ -134,7 +155,12 @@ document.addEventListener('keydown', (e) => {
     else return;
 });
 
-
 //event listeners for keyboard div changes
 window.addEventListener('keydown', buttonPress);
 window.addEventListener('keyup', buttonRelease);
+
+
+//display for tooltips and event listener for hiding/showing them
+tips.style.display = "none";
+heading.addEventListener("click", displayTips);
+
