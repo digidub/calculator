@@ -6,6 +6,7 @@
     color: #f4feff;
     font-size: 35px;
     transition: all 0.5s linear;
+    cursor: default;
 }
 
 .wrapper {
@@ -32,13 +33,12 @@ h1 {
 p {
     font-family: monospace;
     font-size: 10px;
-    color: black;
+    color: #093A3E;
     align-self: center;    
 }
 
 .hide-tips {
-    margin-block-start: 0px;
-    color: #093A3E;
+    margin-block-start: 0px;    
 }
 
 kbd {    
