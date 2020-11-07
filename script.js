@@ -169,28 +169,3 @@ tips.style.display = "none";
 heading.addEventListener("click", displayTips);
 
 
-
-
-
-/*function equals() {
-    //test to see whether a calculation has been entered
-    if (calculation.textContent == "") {
-        calcDisplay.textContent = 0;
-        return;
-    };
-    //attempt calculation, otherwise display error message if syntax error
-    let calcSum;
-    try {
-        if (isNaN(eval(parseFloat(calculation.textContent)))) {
-            calcDisplay.textContent = eval(parseFloat(calculation.textContent));
-        }
-    } catch (e) {
-        if (e instanceof SyntaxError) {
-            calcDisplay.textContent = "ERROR";
-        }
-    };
-    //clear calculation div:
-    calculation.textContent = "";
-    startOver = true;
-    return;
-};*/
