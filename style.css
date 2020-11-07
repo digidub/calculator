@@ -21,6 +21,29 @@
     width: 250px;
     color: #97C8EB;
     margin-top: 0px;
+    text-align: center;
+}
+
+h1 {
+    margin-block-end: auto;
+}
+
+p {
+    font-family: monospace;
+    font-size: 10px;
+    color: black;
+    align-self: center;
+    
+}
+
+kbd {    
+    font-family: monospace;    
+    border-radius: 3px;
+    padding: 0px 4px;
+    box-shadow: 1px 1px 1px #777;
+    margin: 1px;    
+    background: #eee;
+    color: darkslategray;
 }
 
 .calculator-body {
