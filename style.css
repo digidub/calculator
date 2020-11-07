@@ -26,14 +26,19 @@
 
 h1 {
     margin-block-end: auto;
+    height: 70px;
 }
 
 p {
     font-family: monospace;
     font-size: 10px;
     color: black;
-    align-self: center;
-    
+    align-self: center;    
+}
+
+.hide-tips {
+    margin-block-start: 0px;
+    color: #093A3E;
 }
 
 kbd {    
