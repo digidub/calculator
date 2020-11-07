@@ -117,19 +117,23 @@ document.addEventListener('keydown', (e) => {
 
 //function to add keydown effect to calculator button when pressed with keyboard
 function buttonPress(e) {
-    console.log(e.keyCode);
     let key = document.querySelector(`.calculator[data-key="${e.keyCode}"]`)
+    if (key) {
     key.classList.add('keypress');
     return;
 }
+else return;
+};
 
 //function to remove keydown effect
 function buttonRelease(e) {
-    console.log(e);
     let key = document.querySelector(`.calculator[data-key="${e.keyCode}"]`)
+    if (key) {
     key.classList.remove('keypress');
     return;
 }
+else return;
+};
 
 const buttons = document.querySelectorAll('.calculator');
 
