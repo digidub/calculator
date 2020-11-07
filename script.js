@@ -97,20 +97,20 @@ function backSpace() {
 function buttonPress(e) {
     let key = document.querySelector(`.calculator[data-key="${e.keyCode}"]`)
     if (key) {
-    key.classList.add('keypress');
-    return;
-}
-else return;
+        key.classList.add('keypress');
+        return;
+    }
+    else return;
 };
 
 //function to remove keydown effect
 function buttonRelease(e) {
     let key = document.querySelector(`.calculator[data-key="${e.keyCode}"]`)
     if (key) {
-    key.classList.remove('keypress');
-    return;
-}
-else return;
+        key.classList.remove('keypress');
+        return;
+    }
+    else return;
 };
 
 //keyboard event listener & higher level functions
@@ -127,7 +127,7 @@ document.addEventListener('keydown', (e) => {
         clearAll();
         return;
     }
-    else if (e.keyCode == 13 || e.keyCode == 32) {
+    else if (e.keyCode == 13) {
         equals();
         return;
     }
