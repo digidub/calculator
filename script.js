@@ -95,6 +95,7 @@ function backSpace() {
 
 //keyboard event listener & higher level functions
 document.addEventListener('keydown', (e) => {
+    buttonPress(e);
     if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")" || e.key == "." || e.key == "*") {
         calculate(e.key);
         return;
@@ -107,9 +108,30 @@ document.addEventListener('keydown', (e) => {
         clearAll();
         return;
     }
-    else if (e.keyCode == 13) {
+    else if (e.keyCode == 13 || e.keyCode == 32) {
         equals();
         return;
     }
     else return;
 });
+
+//function to add keydown effect to calculator button when pressed with keyboard
+function buttonPress(e) {
+    console.log(e.keyCode);
+    let key = document.querySelector(`.calculator[data-key="${e.keyCode}"]`)
+    key.classList.add('keypress');
+    return;
+}
+
+//function to remove keydown effect
+function buttonRelease(e) {
+    console.log(e);
+    let key = document.querySelector(`.calculator[data-key="${e.keyCode}"]`)
+    key.classList.remove('keypress');
+    return;
+}
+
+const buttons = document.querySelectorAll('.calculator');
+
+window.addEventListener('keydown', buttonPress);
+window.addEventListener('keyup', buttonRelease);
