@@ -93,28 +93,6 @@ function backSpace() {
     return;
 }
 
-//keyboard event listener & higher level functions
-document.addEventListener('keydown', (e) => {
-    buttonPress(e);
-    if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")" || e.key == "." || e.key == "*") {
-        calculate(e.key);
-        return;
-    }
-    else if (e.keyCode == 8) {
-        backSpace();
-        return
-    }
-    else if (e.keyCode == 46) {
-        clearAll();
-        return;
-    }
-    else if (e.keyCode == 13 || e.keyCode == 32) {
-        equals();
-        return;
-    }
-    else return;
-});
-
 //function to add keydown effect to calculator button when pressed with keyboard
 function buttonPress(e) {
     let key = document.querySelector(`.calculator[data-key="${e.keyCode}"]`)
@@ -135,7 +113,28 @@ function buttonRelease(e) {
 else return;
 };
 
-const buttons = document.querySelectorAll('.calculator');
+//keyboard event listener & higher level functions
+document.addEventListener('keydown', (e) => {
+    if (e.key >= 0 || e.key == "/" || e.key == "x" || e.key == "-" || e.key == "+" || e.key == "(" || e.key == ")" || e.key == "." || e.key == "*") {
+        calculate(e.key);
+        return;
+    }
+    else if (e.keyCode == 8) {
+        backSpace();
+        return
+    }
+    else if (e.keyCode == 46) {
+        clearAll();
+        return;
+    }
+    else if (e.keyCode == 13 || e.keyCode == 32) {
+        equals();
+        return;
+    }
+    else return;
+});
 
+
+//event listeners for keyboard div changes
 window.addEventListener('keydown', buttonPress);
 window.addEventListener('keyup', buttonRelease);
